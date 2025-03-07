@@ -1,12 +1,19 @@
 const container = document.querySelector("#container");
 
-function squareItens () {
-    for (let i = 0; i < 16 ; i++) {
+function deleteGrid(container){
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
+function gridB(gridSide,container) {
+
+    for (let i = 0; i < gridSide ; i++) {
 
         const row = document.createElement("div");
         row.classList.add("row");
 
-        for (let j = 0; j < 16 ; j++) {
+        for (let j = 0; j < gridSide ; j++) {
             const square = document.createElement("div");
             square.style.background = "white";
             square.classList.add("square");
@@ -24,11 +31,23 @@ function squareItens () {
                 e.target.style.background = "black";
         })
         grid.addEventListener("mouseleave", function (e) {
-            console.log(e.target.style.background);
             if(e.target.style.background === "black")
                 e.target.style.background = "white";
         })
     })
+    
 }
 
-squareItens();
+function etchASketch () {
+
+    gridB(16,container);
+    const button = document.querySelector("button");
+    button.addEventListener("click", function(e) {
+        let gridSide = prompt("Squares per side: ");
+        if(gridSide > 1 && gridSide <= 100)
+            deleteGrid(container);
+            gridB(gridSide,container);
+    })
+}
+
+etchASketch();

@@ -5,8 +5,13 @@
     margin-bottom: 0px;
 }
 
+button {
+    margin: 8px 0px;
+}
+
 #container {
-    height: 100vh;
+    height: 960px;
+    width: 960px;
     display: flex;
     flex-direction: column;
 }
