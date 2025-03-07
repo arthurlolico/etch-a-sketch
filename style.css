@@ -18,6 +18,5 @@
 
 .square {
     flex: 1;
-    background: peachpuff;
-    border: 4px solid brown;
+    border: 1px solid black;
 }
