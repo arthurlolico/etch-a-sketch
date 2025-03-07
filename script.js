@@ -1,18 +1,18 @@
 const container = document.querySelector("#container");
 
 function squareItens () {
-    for (let i = 0; i < 16 ; i++) {
+    for (let i = 0; i < 2 ; i++) {
 
-        const rowSquare = document.createElement("div");
-        rowSquare.classList.add("rowSquare");
+        const row = document.createElement("div");
+        row.classList.add("row");
 
-        for (let j = 0; j < 16 ; j++) {
+        for (let j = 0; j < 2 ; j++) {
             const square = document.createElement("div");
             square.classList.add("square");
-            rowSquare.appendChild(square);
+            row.appendChild(square);
         }
 
-        container.appendChild(rowSquare);
+        container.appendChild(row);
     }
 }
 
